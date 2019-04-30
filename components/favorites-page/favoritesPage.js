@@ -1,9 +1,11 @@
-function MyChildController() {
+function FavoritesPageController() {
     const ctrl = this;
  
   }
   
-  angular.module('RecipeApp').component('myChild', {
+  angular
+  .module('RecipeApp')
+  .component('favoritesPage', {
     template: `
     <hr>
     <div>
@@ -11,7 +13,7 @@ function MyChildController() {
       Age: {{$ctrl.me.age}} <button ng-click="$ctrl.update('age', $ctrl.me.age+1)">Add 1</button><br>
       <button ng-click="$ctrl.delete()">Delete</button>
     </div>`, // or use templateUrl
-    controller: MyChildController,
+    controller: FavoritesPageController,
     // bindings: {
     //   me: '<',
     //   onDelete: '&',
