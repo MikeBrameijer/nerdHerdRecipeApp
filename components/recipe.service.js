@@ -1,102 +1,37 @@
 function RecipeService($http, $q) {
     const service = this;
  
-    service.key = 'rEKWKvPrW7HpooXYxbjymSfIAOyKcwvvhixHIIWNAYlZeLLzmv'; // Fill in here
-    service._secret = 'OlpuSV27PqFDXswHBLBMPCHuTPh6DfxauvnwNSO5'; // Fill in here
+    service.key = 'cc5720c46e1eecba3eaca90c761a2fd8'; // Fill in here
+    service.id = 'f246321d'; // Fill in here
     service.token = '';
 
-    service.doAuth = () => {
-        return $q(function (resolve, reject) {
+    service.getData = (search) =>{
+        let url = 'https://api.edamam.com/search';
+        return $q(function (resolve, reject){
             $http({
-                url: 'https://api.petfinder.com/v2/oauth2/token',
-                data: {
-                    grant_type: 'client_credentials',
-                    client_id: service.key,
-                    client_secret: service._secret
-                },
-                method: 'POST'
-            })
-                .then((response) => {
-                    service.token = response.data.access_token;
-                    resolve(service.token);
-                });
+                            url: url,
+                            // method: 'GET',
+                            params: {
+                                q: search,
+                                app_id: service.id,
+                                app_key: service.key
+                            },
+
         })
-    };
-
-    service.getTypes = () => {
-        return $q(function (resolve, reject) {
-            service.doAuth()
-                .then((token) => {
-                    $http({
-                        url: 'https://api.petfinder.com/v2/types/',
-                        method: 'GET',
-                        headers: {
-                            'Authorization': 'Bearer ' + token
-                        }
-                    })
-                        .then((response) => {
-                            let types = [];
-
-                            // Go through each item and organize
-                            // the data into usable array
-                            response.data.types.forEach(function (type) {
-                                // See API docs for how this is organized
-                                types.push({
-                                    name: type.name,
-                                    value: type._links.self.href.split('/v2/types/')[1]
-                                })
-                            });
-
-                            console.log(types);
-                            resolve(types);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                            reject(error);
-                        })
-
-                });
+        .then((response) => {
+            console.log("it worked!!!!!!s")
+            console.log(response)
+            resolve();
         })
-    }
-
-    service.getData = (filter) => {
-        let url = 'https://api.petfinder.com/v2/animals';
-
-        // If a filter is supplied, add to URL to query by that type
-        if (filter) {
-            url += `?type=${filter}`;
-        }
-        return $q(function (resolve, reject) {
-            service.doAuth()
-                .then((token) => {
-                    $http({
-                        url: url,
-                        method: 'GET',
-                        headers: {
-                            'Authorization': 'Bearer ' + token
-                        }
+        .catch((err) => {
+            console.log("it didnt work")
+            console.log(err);
+                        reject(error);
                     })
-                        .then((response) => {
-                            console.log(response)
-                            resolve(response.data.animals);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                            reject(error);
-                        })
-                });
-        });
-    }
+    })
 }
-
-       
-
+}
 
 angular
 .module('RecipeApp')
-.service('RecipeService',
-//  ['$http'
-//  ,
-  RecipeService
-// ]
-)
+.service('recipeService', RecipeService);

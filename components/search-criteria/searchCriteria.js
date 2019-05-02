@@ -1,6 +1,10 @@
-function SearchCriteriaController() {
+function SearchCriteriaController(recipeService) {
     const ctrl = this;
- 
+
+    ctrl.getSearch = (search) =>{
+        recipeService.getData(search);
+    }
+     
   }
   
   angular
@@ -8,11 +12,9 @@ function SearchCriteriaController() {
   .component('searchCriteria', {
     template: `
     <hr>
-    <div>
-      Name: {{$ctrl.me.name}}<br>
-      Age: {{$ctrl.me.age}} <button ng-click="$ctrl.update('age', $ctrl.me.age+1)">Add 1</button><br>
-      <button ng-click="$ctrl.delete()">Delete</button>
-    </div>`, // or use templateUrl
+    <input ng-model="$ctrl.searchVar" placeholder="what do you want to eat"/>
+    <button ng-click="$ctrl.getSearch($ctrl.searchVar)"> Search Now </button>
+    `, 
     controller: SearchCriteriaController,
     // bindings: {
     //   me: '<',
