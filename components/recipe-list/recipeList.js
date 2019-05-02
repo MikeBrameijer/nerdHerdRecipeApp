@@ -38,31 +38,31 @@ angular
   .component('recipeList', {
     template: `
     <search-criteria get-list="$ctrl.getList(search)"></search-criteria>
-   <div class="cardContainer">
-    <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
-    <div class="imageCard">
-      <!-- <div class="favorite">
-            <i class="material-icons favoriteIcon">favorite_border</i>
-            <i class="material-icons favoriteIcon">favorite</i>
-        </div> -->
-      <img class="foodImage" src="{{recipe.img}}" alt="food">
-    </div>
-    <div class="informationCard">
-      <h2 class="cardDefault cardParams cardHeader cardSpacing">{{recipe.label}}</h2>
-      <div class="cardStats">
-        <p class="cardDefault rightBorder">Calories:
-          <span class="cardParams">{{recipe.calories}}</span>
-        </p>
-        <p class="cardDefault">Servings:
-          <span class="cardParams">{{recipe.servings}}</span>
-        </p>
+    <div class="cardContainer">
+        <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
+          <div class="imageCard">
+            <!-- <div class="favorite">
+                  <i class="material-icons favoriteIcon">favorite_border</i>
+                  <i class="material-icons favoriteIcon">favorite</i>
+              </div> -->
+            <img class="foodImage" src="{{recipe.img}}" alt="food">
+          </div>
+          <div class="informationCard">
+            <h2 class="cardDefault cardParams cardHeader cardSpacing">{{recipe.label}}</h2>
+            <div class="cardStats">
+              <p class="cardDefault rightBorder">Calories:
+                <span class="cardParams">{{recipe.calories}}</span>
+              </p>
+              <p class="cardDefault">Servings:
+                <span class="cardParams">{{recipe.servings}}</span>
+              </p>
+            </div>
+            <p class="cardDefault cardSpacing">Ingredients Needed:
+              <span class="cardParams">7</span>
+            </p>
+          </div>
       </div>
-      <p class="cardDefault cardSpacing">Ingredients Needed:
-        <span class="cardParams">7</span>
-      </p>
     </div>
-  </div>
-  </div>
   `, // or use templateUrl
     controller: RecipeListController,
     // bindings: {
