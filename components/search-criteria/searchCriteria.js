@@ -2,7 +2,7 @@ function SearchCriteriaController(recipeService) {
     const ctrl = this;
 
     ctrl.getSearch = (search) =>{
-        recipeService.getData(search);
+        ctrl.getList({search:search});
     }
      
   }
@@ -16,9 +16,10 @@ function SearchCriteriaController(recipeService) {
     <button ng-click="$ctrl.getSearch($ctrl.searchVar)"> Search Now </button>
     `, 
     controller: SearchCriteriaController,
-    // bindings: {
+    bindings: {
+      getList: '&',
     //   me: '<',
     //   onDelete: '&',
     //   onUpdate: '&'
-    // }
+    }
 });
