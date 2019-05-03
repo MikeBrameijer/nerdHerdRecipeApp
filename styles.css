@@ -1,3 +1,9 @@
+.fullContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cardContainer {
     display: flex;
     justify-content: center;
@@ -25,14 +31,15 @@
 .imageCard {
     border-radius: 15px;
     width: 280px;
-    height: 280px;
     overflow: hidden;
+    padding-top: 10px;
 }
 
 
 
 .foodImage {
-    max-height: 280px;
+    max-width: 280px;
+    border-radius: 15px;
 }
 
 
@@ -94,13 +101,22 @@
 
 
 .favorite {
-    position: fixed;
-    font-size: 32px;
+    transform: translateX(230px) translateY(15px);
+    position: absolute;
+    
 }
 
 
-
 .favoriteIcon {
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.greenIcon {
     color: #AEC33A;
-    background-color: white;
+}
+
+.whiteIcon {
+    color: white;
 }
