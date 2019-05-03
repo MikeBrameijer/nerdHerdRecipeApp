@@ -6,7 +6,7 @@ function RecipeListController(recipeService) {
     recipeService.getData(search)
       .then((recipes) => {
         ctrl.recipesList = []
-        console.log("it worked!!!!!!s")
+        console.log("it worked!!!!!!")
         console.log(recipes)
         let listFromApi = recipes;
         listFromApi.forEach(function (spot, index){
@@ -37,7 +37,7 @@ angular
   .module('RecipeApp')
   .component('recipeList', {
     template: `
-    <search-criteria get-list="$ctrl.getList(search)"></search-criteria>
+    <search-criteria get-list="$ctrl.getList(que)"></search-criteria>
    <div class="cardContainer">
     <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
     <div class="imageCard">

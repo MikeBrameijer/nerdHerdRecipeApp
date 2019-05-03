@@ -13,7 +13,8 @@ function RecipeService($http, $q) {
                 params: {
                     q: search,
                     app_id: service.id,
-                    app_key: service.key
+                    app_key: service.key,
+                    to: 30
                 },
 
             })

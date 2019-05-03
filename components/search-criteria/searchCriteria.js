@@ -1,8 +1,10 @@
-function SearchCriteriaController(recipeService) {
+function SearchCriteriaController() {
     const ctrl = this;
 
     ctrl.getSearch = (search) =>{
-        ctrl.getList({search:search});
+        ctrl.getList({
+          que:search
+        });
     }
      
   }
