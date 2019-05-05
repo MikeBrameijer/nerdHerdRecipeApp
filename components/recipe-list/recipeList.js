@@ -37,28 +37,7 @@ angular
   .module('RecipeApp')
   .component('recipeList', {
     template: `
-<<<<<<< HEAD
     <search-criteria get-list="$ctrl.getList(que)"></search-criteria>
-   <div class="cardContainer">
-    <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
-    <div class="imageCard">
-      <!-- <div class="favorite">
-            <i class="material-icons favoriteIcon">favorite_border</i>
-            <i class="material-icons favoriteIcon">favorite</i>
-        </div> -->
-      <img class="foodImage" src="{{recipe.img}}" alt="food">
-    </div>
-    <div class="informationCard">
-      <h2 class="cardDefault cardParams cardHeader cardSpacing">{{recipe.label}}</h2>
-      <div class="cardStats">
-        <p class="cardDefault rightBorder">Calories:
-          <span class="cardParams">{{recipe.calories}}</span>
-        </p>
-        <p class="cardDefault">Servings:
-          <span class="cardParams">{{recipe.servings}}</span>
-        </p>
-=======
-    <search-criteria get-list="$ctrl.getList(search)"></search-criteria>
     <div class="cardContainer">
         <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
           <div class="imageCard">
@@ -83,7 +62,6 @@ angular
               <span class="cardParams">{{recipe.ingredients}}</span>
             </p>
           </div>
->>>>>>> 60feffded177ab9de8727ac1bfd64cf2779fa527
       </div>
     </div>
   `, // or use templateUrl
