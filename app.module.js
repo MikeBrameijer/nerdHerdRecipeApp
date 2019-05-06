@@ -1,4 +1,4 @@
 "use strict";
 // getter syntax
-angular.module("RecipeApp", []);
+angular.module("RecipeApp", ["ngRoute"]);
 // "ngRoute"

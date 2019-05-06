@@ -1,7 +1,17 @@
 * {
     box-sizing: border-box;
 }
+nav {
+    display: flex;
+    justify-content: center;
 
+}
+
+ul {
+    margin: 5px;
+    padding: 10px;
+
+}
 body {
     margin: 0;
 }
