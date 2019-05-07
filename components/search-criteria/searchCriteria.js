@@ -82,6 +82,7 @@ function SearchCriteriaController() {
   .module('RecipeApp')
   .component('searchCriteria', {
     template: `
+    
     <div class="searchCard">
       <div class="topNative">
         <img src="https://cdn.pixabay.com/photo/2014/08/14/14/21/shish-kebab-417994_1280.jpg">
