@@ -4,44 +4,56 @@ function FiltersController() {
     ctrl.filters = [{
         filterName: "DIET",
         categories: [{
-            name: "balanced"
+            name: "Balanced",
+            value: "balanced"
             },
             {
-            name: "high-protein"
+            name: "High-Protein",
+            value: "high-protein"
             },
             {
-            name: "high-fiber"
+            name: "High-Fiber",
+            value: "high-fiber"
             },
             {
-            name: "low-fat"
+            name: "Low-Fat",
+            value: "low-fat"
             },
             {
-            name: "low-carb"
+            name: "Low-Carb",
+            value: "low-carb"
             },
             {
-            name: "low-sodium"
+            name: "Low-Sodium",
+            value: "low-sodium"
             }
         ]
     },
     {
         filterName: "HEALTH",
         categories: [{
-            name: "dairy-free"
+            name: "Dairy-Free",
+            value: "dairy-free"
             },
             {
-            name: "gluten-free"
+            name: "Gluten-Free",
+            value: "gluten-free"
             },
             {
-            name: "keto-friendly"
+            name: "Keto-Friendly",
+            value: "keto-friendly"
             },
             {
-            name: "paleo"
+            name: "Paleo",
+            value: "paleo"
             },
             {
-            name: "peanut-free"
+            name: "Peanut-Free",
+            value: "peanut-free"
             },
             {
-            name: "vegetarian"
+            name: "Vegetarian",
+            value: "vegetarian"
             }
         ]
     }
