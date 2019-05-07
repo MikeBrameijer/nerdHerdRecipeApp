@@ -14,10 +14,9 @@ function RecipeService($http, $q) {
                     q: search,
                     app_id: service.id,
                     app_key: service.key,
-                    to: 10,
-                    // diet: "Low-Carb",
-                    // DishType: "lunch"
-
+                    to: 30,
+                    // DishType: "lunch",
+                    diet: "low-carb"
                 },
 
             })
