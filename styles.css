@@ -2,12 +2,22 @@
     box-sizing: border-box;
 }
 nav {
+    background-color: white;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+
+    
 
 }
 
 ul {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
     margin: 5px;
     padding: 10px;
 
