@@ -2,22 +2,48 @@ function FiltersController() {
     const ctrl = this;
 
     ctrl.filters = [{
-        filterName: "Filter 1",
-        option1: "Option 1",
-        option2: "Option 2",
-        option3: "Option 3",
+        filterName: "DIET",
+        categories: [{
+            name: "balanced"
+            },
+            {
+            name: "high-protein"
+            },
+            {
+            name: "high-fiber"
+            },
+            {
+            name: "low-fat"
+            },
+            {
+            name: "low-carb"
+            },
+            {
+            name: "low-sodium"
+            }
+        ]
     },
     {
-        filterName: "Filter 2",
-        option1: "Option 1",
-        option2: "Option 2",
-        option3: "Option 3",
-    },
-    {
-        filterName: "Filter3",
-        option1: "Option 1",
-        option2: "Option 2",
-        option3: "Option 3",
+        filterName: "HEALTH",
+        categories: [{
+            name: "dairy-free"
+            },
+            {
+            name: "gluten-free"
+            },
+            {
+            name: "keto-friendly"
+            },
+            {
+            name: "paleo"
+            },
+            {
+            name: "peanut-free"
+            },
+            {
+            name: "vegetarian"
+            }
+        ]
     }
     
     ]
@@ -36,11 +62,9 @@ function FiltersController() {
                 <i class="material-icons redIcon">keyboard_arrow_down</i>
             </div>
             <div class="filterDropdown">
-                <ul class="filterLists">
-                    <li class="filterListItem">{{filter.option1}}</li>
-                    <li class="filterListItem">{{filter.option2}}</li>
-                    <li class="filterListItem">{{filter.option3}}</li>
-                </ul>
+                <div ng-repeat="category in filter.categories">
+                    <p>{{category.name}}</p>
+                </div>
             <div>
         </div>
     </div>
