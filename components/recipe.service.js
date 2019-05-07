@@ -1,5 +1,6 @@
 function RecipeService($http, $q) {
     const service = this;
+    service.favoriteArray = []
 
     service.key = 'cc5720c46e1eecba3eaca90c761a2fd8';
     service.id = 'f246321d';
@@ -31,6 +32,12 @@ function RecipeService($http, $q) {
                     reject(error);
                 })
         })
+    }
+    service.setFavorites = (favoriteParam) =>{
+        service.favoriteArray.push(favoriteParam);
+    }
+    service.setRemoveFavorites = (removeParam) =>{
+        service.favoriteArray.splice(service.favoriteArray.indexOf(removeParam), 1);
     }
 }
 
