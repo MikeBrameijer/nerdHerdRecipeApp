@@ -7,9 +7,6 @@ function RecipeListController(recipeService) {
     console.log("you clicked it");
   }
 
-  ctrl.setRemoveFavorites = (removeParam) => {
-    recipeService.setFavorites(removeParam)
-  }
 
   ctrl.getList = (search) => {
     recipeService.getData(search)
