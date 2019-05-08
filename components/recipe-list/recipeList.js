@@ -2,6 +2,14 @@ function RecipeListController(recipeService) {
   const ctrl = this;
   ctrl.recipesList = [];
 
+  ctrl.addFavorite = (favoriteParam) => {
+    recipeService.setFavorites(favoriteParam)
+  }
+
+  ctrl.setRemoveFavorites = (removeParam) => {
+    recipeService.setFavorites(removeParam)
+  }
+
   ctrl.getList = (search) => {
     recipeService.getData(search)
       .then((recipes) => {
@@ -44,7 +52,7 @@ angular
           <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
             <div class="imageCard">
               <div class="favorite">
-                  <i class="material-icons favoriteIcon whiteIcon">favorite</i>
+                  <i class="material-icons favoriteIcon whiteIcon" ng-click="$ctrl.addFavorite(recipe)">favorite</i>
                   <i class="material-icons favoriteIcon greenIcon">favorite_border</i>
                     
                 </div>
