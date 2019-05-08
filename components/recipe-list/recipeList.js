@@ -25,7 +25,8 @@ function RecipeListController(recipeService) {
             calories: spot.recipe.calories,
             ingredients: spot.recipe.ingredients.length,
             servings: spot.recipe.yield,
-            bookmark: spot.bookmarked
+            bookmark: spot.bookmarked,
+            url: spot.recipe.url
           }
           ctrl.recipesList.push(recipeObj);
         })
@@ -35,6 +36,12 @@ function RecipeListController(recipeService) {
         console.log(err);
       });
   }
+
+  ctrl.showMore = (recipe) => {
+    ctrl.showMore = !ctrl.showMore 
+
+    console.log(ctrl.showMore);
+  };
 
   
 
@@ -54,7 +61,7 @@ angular
             <div class="imageCard">
               <div class="favorite" ng-click="$ctrl.addFavorite(recipe)">
                   <i class="material-icons favoriteIcon whiteIcon" >favorite</i>
-                  <i class="material-icons favoriteIcon greenIcon">favorite_border</i>
+                  <i class="material-icons favoriteIcon redIcon">favorite_border</i>
                     
                 </div>
               <img class="foodImage" src="{{recipe.img}}" alt="food">
@@ -72,6 +79,11 @@ angular
               <p class="cardDefault cardSpacing">Ingredients Needed:
                 <span class="cardParams">{{recipe.ingredients}}</span>
               </p>
+              <button ng-click="$ctrl.showMore(recipe)" >More Info</button>
+              <div class="hideCard" ng-class="{'showCard' : $ctrl.showMore === false}">
+                <a href="{{recipe.url}}" target="_blank" class="cardDefault cardSpacing cardParams">View the recipe
+                </a>
+              </div>
             </div>
         </div>
       </div>
