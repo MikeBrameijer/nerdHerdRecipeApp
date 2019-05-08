@@ -26,7 +26,7 @@ function RecipeService($http, $q) {
                     console.log(response)
                     resolve(response.data.hits);
                 })
-                .catch((err) => {
+                .catch((err) => {  
                     console.log("it didnt work")
                     console.log(err);
                     reject(error);
