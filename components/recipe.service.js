@@ -5,7 +5,7 @@ function RecipeService($http, $q) {
     service.key = 'cc5720c46e1eecba3eaca90c761a2fd8';
     service.id = 'f246321d';
 
-    service.getData = (search) => {
+    service.getData = (search, diet, healt) => {
         let url = 'https://api.edamam.com/search';
         return $q(function (resolve, reject) {
             $http({
