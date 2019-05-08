@@ -12,8 +12,9 @@
       background-color: #d92139;
       height: 180px;
       color: white;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
+      font-size: 10px;
     
     
 
@@ -30,8 +31,37 @@
       height: 10px;
   }
 
+  #footer-text{
+    font-size: 50px;
+  }
+
+  #inspiration{
+      font-size: 10%;
+  }
 /* *************************************************************************************************************************************** */
 
+
+.main-container{
+    display:flex ;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 700px;
+    justify-content: space-around;
+
+}
+
+.container1{
+    /* display: block; */
+    width: auto;
+    display: block;
+    
+
+    
+}
+#photo{
+    width: 500px;
+
+}
 
 * {
     box-sizing: border-box;
@@ -147,12 +177,13 @@ body {
 }
 
 .topNative {
-    width: 1300px;
+    width: auto;
     overflow: hidden;
 }
 
 .topNativeImage {
-    max-width: 1300px;
+    
+    max-width: auto;
 }
 
 .contentContainer {
@@ -291,6 +322,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .filterMasterCard {
