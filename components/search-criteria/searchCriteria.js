@@ -85,7 +85,7 @@ function SearchCriteriaController() {
     
     <div class="searchCard">
       <div class="topNative">
-        <img src="https://cdn.pixabay.com/photo/2014/08/14/14/21/shish-kebab-417994_1280.jpg">
+        <img class="topNativeImage" src="Assets/Header_Placeholder.jpg">
       </div>
       <div class="searchInput">
         <input class="searchBox" ng-model="$ctrl.searchVar" placeholder="what do you want to eat"/>
@@ -93,7 +93,7 @@ function SearchCriteriaController() {
         <button class="searchButton" ng-click="$ctrl.getSearch($ctrl.searchVar)"> Search Now </button>
        </div>
     </div>
-    
+
     <div class="filterContainer">
     <div class="filterMasterCard">
         <div class="filterCard" ng-repeat="filter in $ctrl.filters">
