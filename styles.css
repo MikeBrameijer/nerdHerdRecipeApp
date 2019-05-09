@@ -1,52 +1,44 @@
 
 /****************************** Footer logic*****************************************/
 
-
-
-
-
-
-
   #footer-id{
       display:flex;
       background-color: #d92139;
-      height: 180px;
+      height: 120px;
       color: white;
       justify-content: center;
-      align-items: center;
-      font-size: 10px;
-    
-    
-
+      align-items: flex-end;
+      font-size: 15px;
+      width: 100%;
   }
 
   footer {
       display: block;
+      width: 100%;
   }
-
-  flex-center{
-      width: 10%;
-      display: flex;
-      justify-content: space-evenly;
-      height: 10px;
-  }
+ 
 
   #footer-text{
-    font-size: 50px;
+    font-size: 65px;
   }
 
-  #inspiration{
-      font-size: 10%;
-  }
+
 /* *************************************************************************************************************************************** */
 
+.container2{
+    flex-wrap: wrap-reverse;
+    font-size: 2.0em;
+    width: 500px;
+    margin-left: 13%;
+}
 
 .main-container{
     display:flex ;
     flex-direction: row-reverse;
     align-items: center;
-    height: 700px;
+    height: 1300px;
     justify-content: space-around;
+    width: 90%;
 
 }
 
@@ -54,6 +46,7 @@
     /* display: block; */
     width: auto;
     display: block;
+    align-items: flex-end;
     
 
     
@@ -177,13 +170,13 @@ body {
 }
 
 .topNative {
-    width: auto;
+    width: 1800px;
     overflow: hidden;
 }
 
 .topNativeImage {
     
-    max-width: auto;
+    max-width: 1800px;
 }
 
 .contentContainer {
