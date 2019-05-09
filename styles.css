@@ -29,6 +29,7 @@ nav {
     display: flex;
     align-items: center;
     border-style: solid;
+    border-width: 4px;
     border-color: #D92139;
     border-radius: 2px 35%;
 
@@ -49,6 +50,7 @@ a {
 
 body {
     margin: 0;
+    width: 100vw;
 }
 
 .logoContainer {
@@ -109,18 +111,21 @@ body {
     box-shadow: none;
     border: none;
     color: white;
-    font-size: 24;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
 }
 
 .topNative {
-    width: 1300px;
+    display: flex;
+    width: 100%;
     overflow: hidden;
+    align-content: center;
 }
 
 .topNativeImage {
-    max-width: 1300px;
+    justify-content: center;
+    max-width: 1280px;
 }
 
 .contentContainer {
@@ -254,6 +259,10 @@ body {
     font-weight: bold;
 }
 
+
+
+
+
 .filterContainer {
     display: flex;
     flex-direction: column;
@@ -261,7 +270,7 @@ body {
     justify-content: center;
 
 }
-
+/* 
 .filterMasterCard {
     width: 900px;
     display: flex;
@@ -269,9 +278,10 @@ body {
     justify-content: space-around;
     flex-direction: row;
     font-family: 'Lato', sans-serif;
-}
+} */
 
-.filterCard {
+
+/* .filterCard {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,16 +290,39 @@ body {
     width: 250px;
     padding: 0 20px;
     margin: 10px;
-}
+} */
 
-.filterButton {
+/* .filterButton {
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;   
-}
+} */
 
+  
+  .filterSelect {
+    background-color: rgb(37, 63, 88);
+    font-family: 'Lato', sans-serif;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    margin: 20px;
+    border: 0 !important;
+    font-size: 18px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* outline: none; */
+  }
+
+
+  /* .filterSelect:active, .filterSelect:hover {
+    outline: none
+  } */
+
+/* 
 .filterList {
     list-style: none;
     width: 100%;
@@ -298,7 +331,12 @@ body {
 .filterListItem {
     list-style: none;
     padding: 5px;
-}
+} */
+
+
+
+
+
 
 .showMore {
     width: 100%;
@@ -328,12 +366,13 @@ body {
     align-items: flex-end;
     font-size: 15px;
     width: 100%;
-    position: fixed;
+    border-top: 5px solid white;
+    /* position: fixed; */
     bottom: 0;
 }
 
 footer {
-    display: block;
+    /* display: block; */
     width: 100%;
 }
 

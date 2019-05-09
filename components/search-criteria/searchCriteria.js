@@ -29,8 +29,7 @@ angular
         <input class="searchBox" ng-model="$ctrl.searchVar" placeholder="what do you want to eat"/>
         <div class="searchBack"></div>
         <button class="searchButton" ng-click="$ctrl.getSearch($ctrl.searchVar, $ctrl.dietVal, $ctrl.healthVal)"> Search Now </button>
-       </div>
-    </div>
+     
 
     <div class="filterContainer">
     <div class="filterMasterCard">
@@ -55,6 +54,9 @@ angular
                 </select>
             <div>
         </div>
+    </div>
+    </div>
+
     </div>
     </div>
     `,
