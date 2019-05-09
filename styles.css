@@ -363,10 +363,20 @@ body {
     padding: 5px;
 }
 
-.hideCard {
-    display: none;
+.showMore {
+    width: 100%;
 }
 
-.showCard {
-    display: block;
+.showButton {
+    width: 100%;
+    height: 25px;
+    background-color: #253F58;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
+
+.showMoreCard {
+    margin-bottom: 5px;
+}
+
