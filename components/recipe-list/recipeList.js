@@ -22,7 +22,9 @@ function RecipeListController(recipeService) {
             calories: spot.recipe.calories,
             ingredients: spot.recipe.ingredients.length,
             servings: spot.recipe.yield,
-            bookmark: spot.bookmarked
+            bookmark: spot.bookmarked,
+            url: spot.recipe.url,
+            source: spot.recipe.source
           }
           ctrl.recipesList.push(recipeObj);
         })
@@ -32,6 +34,12 @@ function RecipeListController(recipeService) {
         console.log(err);
       });
   }
+
+  ctrl.showMore = (recipe) => {
+    ctrl.showMore = !ctrl.showMore 
+
+    console.log(ctrl.showMore);
+  };
 
   
 
@@ -49,9 +57,10 @@ angular
       <div class="cardContainer">
           <div ng-repeat="recipe in $ctrl.recipesList" class="fullCard">
             <div class="imageCard">
-              <div class="favorite" ng-click="$ctrl.addFavorite(recipe)">
-                  <i class="material-icons favoriteIcon whiteIcon" >favorite</i>
-                  <i class="material-icons favoriteIcon greenIcon">favorite_border</i>
+              <div class="favorite" ng-click="$ctrl.addFavorite(recipe); favorite=true">
+                  <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
+                  <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
+                  <i class="material-icons favoriteIcon redIcon">favorite_border</i>
                     
                 </div>
               <img class="foodImage" src="{{recipe.img}}" alt="food">
@@ -69,6 +78,18 @@ angular
               <p class="cardDefault cardSpacing">Ingredients Needed:
                 <span class="cardParams">{{recipe.ingredients}}</span>
               </p>
+              <div class="showMore">
+                <button class="showButton" ng-hide="showme" ng-click="showme=true">More Info</button>
+                <button class="showButton" ng-show="showme" ng-click="showme=false">Show Less</button>
+                <div ng-hide="showme"></div>
+                <div class="showMoreCard" ng-show="showme">
+                  <p class="cardDefault">Source: 
+                    <span class="cardParams">{{recipe.source}}</span>
+                  </p>
+                  <p class="cardDefault">URL: <a href="{{recipe.url}}" target="_blank" class="cardParams">View the recipe</a>
+                  </p>
+                </div>
+              </div>
             </div>
         </div>
       </div>
