@@ -51,7 +51,6 @@ a {
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
 }
 
 .logoContainer {
@@ -361,7 +360,7 @@ body {
 #footer-id{
     display:flex;
     background-color: #d92139;
-    height: 120px;
+    height: 140px;
     color: white;
     justify-content: center;
     align-items: flex-end;
@@ -373,7 +372,7 @@ body {
 }
 
 footer {
-    /* display: block; */
+    display: block;
     width: 100%;
 }
 
