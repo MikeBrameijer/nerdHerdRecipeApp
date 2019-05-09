@@ -270,15 +270,15 @@ body {
     justify-content: center;
 
 }
-/* 
-.filterMasterCard {
+
+/* .filterMasterCard {
     width: 900px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
     font-family: 'Lato', sans-serif;
-} */
+}  */
 
 
 /* .filterCard {
@@ -314,15 +314,15 @@ body {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     -webkit-appearance: none;
     -moz-appearance: none;
-    /* outline: none; */
+    outline: none;
+    
   }
-
 
   /* .filterSelect:active, .filterSelect:hover {
     outline: none
   } */
 
-/* 
+
 .filterList {
     list-style: none;
     width: 100%;
@@ -331,7 +331,7 @@ body {
 .filterListItem {
     list-style: none;
     padding: 5px;
-} */
+}
 
 
 

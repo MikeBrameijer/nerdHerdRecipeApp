@@ -3,8 +3,12 @@ function SearchCriteriaController() {
   ctrl.dietVal = "";
   ctrl.healthVal = ""; 
 
-  ctrl.dietFilter = ["Balanced", "High-Protein", "High-Fiber", "Low-Fat", "Low-Carb", "Low-Sodium"]
-  ctrl.healthFilter = ["Dairy-Free", "Gluten-Free", "Keto-Friendly", "Paleo", "Peanut-Free", "Vegetarian"]
+  ctrl.dietFilter = ["Balanced", "High-Protein", "Low-Fat", "Low-Carb"]
+  ctrl.healthFilter = ["Vegetarian", "Sugar-Conscious", "Peanut-Free", "Vegan"]
+
+//   ctrl.dietFilter = ["Balanced", "High-Protein", "Low-Fat", "Low-Carb"]
+//   ctrl.healthFilter = ["Vegetarian", "Keto-Friendly", "Peanut-Free", "Vegan"]
+
 
   ctrl.getSearch = (search, diet, health) => {
     ctrl.getList({
@@ -50,15 +54,14 @@ angular
             </div>
             <div class="filterDropdown">
                 <select ng-options="categorie.name for categorie in filter.categories">
-                    // <p ng-click="$ctrl.addValue(category.value, filter.filterName)">{{category.name}}</p>
+                    <p ng-click="$ctrl.addValue(category.value, filter.filterName)">{{category.name}}</p>
                 </select>
             <div>
         </div>
     </div>
     </div>
-
     </div>
-    </div>
+     </div> 
     `,
     controller: SearchCriteriaController,
     bindings: {
