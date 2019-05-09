@@ -351,11 +351,13 @@ body {
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
+   
 }
 
 .filterList {
     list-style: none;
     width: 100%;
+    
 }
 
 .filterListItem {
