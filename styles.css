@@ -115,13 +115,12 @@ body {
 }
 
 .topNative {
-    width: 1800px;
+    width: 1300px;
     overflow: hidden;
 }
 
 .topNativeImage {
-    
-    max-width: 1800px;
+    max-width: 1300px;
 }
 
 .contentContainer {

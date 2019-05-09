@@ -34,12 +34,12 @@ angular
 
     <div class="filterContainer">
     <div class="filterMasterCard">
-    <select ng-model="$ctrl.dietVal">
+    <select class="filterSelect" ng-model="$ctrl.dietVal">
       <option value="" selected>-- DIET --</option>
       <option ng-repeat="item in $ctrl.dietFilter" value="{{item}}">{{item}}</option>
     </select>
 
-    <select ng-model="$ctrl.healthVal">
+    <select class="filterSelect" ng-model="$ctrl.healthVal">
       <option value="" selected>-- HEALTH --</option>
       <option ng-repeat="item in $ctrl.healthFilter" value="{{item}}">{{item}}</option>
     </select>
