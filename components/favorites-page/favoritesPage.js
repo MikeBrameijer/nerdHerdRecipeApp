@@ -20,7 +20,7 @@ function FavoritesPageController(recipeService) {
         <div ng-repeat="recipe in $ctrl.favoriteArray" class="fullCard">
           <div class="imageCard">
             <div class="favorite" ng-click="$ctrl.setRemoveFavorites(recipe)">
-                <i class="material-icons favoriteIcon whiteIcon>remove_circle</i>
+                <i class="material-icons favoriteIcon whiteIcon">remove_circle</i>
                 <i class="material-icons favoriteIcon redIcon">remove_circle_outline</i>
                   
               </div>
