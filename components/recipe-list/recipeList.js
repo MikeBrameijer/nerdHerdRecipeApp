@@ -8,8 +8,8 @@ function RecipeListController(recipeService) {
   }
 
 
-  ctrl.getList = (search) => {
-    recipeService.getData(search)
+  ctrl.getList = (search, diet, health) => {
+    recipeService.getData(search, diet, health)
       .then((recipes) => {
         ctrl.recipesList = []
         console.log("it worked!!!!!!")
@@ -51,7 +51,7 @@ angular
   .module('RecipeApp')
   .component('recipeList', {
     template: `
-    <search-criteria get-list="$ctrl.getList(que)"></search-criteria>
+    <search-criteria get-list="$ctrl.getList(que, diet, health)"></search-criteria>
     <filters></filters>
     <div class="contentContainer">
       <div class="cardContainer">
