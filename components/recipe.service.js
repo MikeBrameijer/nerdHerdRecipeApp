@@ -5,20 +5,25 @@ function RecipeService($http, $q) {
     service.key = 'cc5720c46e1eecba3eaca90c761a2fd8';
     service.id = 'f246321d';
 
-    service.getData = (search, diet, healt) => {
+    service.getData = (search, diet, health) => {
         let url = 'https://api.edamam.com/search';
+        let apiParam = {
+            q: search,
+            app_id: service.id,
+            app_key: service.key,
+            to: 30,
+        }
+        if(diet != ""){
+            apiParam.diet = diet;
+        }
+        if(health != ""){
+            apiParam.health = health;
+        }
         return $q(function (resolve, reject) {
             $http({
                 url: url,
                 method: 'GET',
-                params: {
-                    q: search,
-                    app_id: service.id,
-                    app_key: service.key,
-                    to: 30,
-                    // DishType: "lunch",
-                    diet: "low-carb"
-                },
+                params: apiParam,
 
             })
                 .then((response) => {
@@ -26,7 +31,7 @@ function RecipeService($http, $q) {
                     console.log(response)
                     resolve(response.data.hits);
                 })
-                .catch((err) => {
+                .catch((err) => {  
                     console.log("it didnt work")
                     console.log(err);
                     reject(error);

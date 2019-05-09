@@ -1,84 +1,22 @@
 function SearchCriteriaController() {
-    const ctrl = this;
+  const ctrl = this;
+  ctrl.dietVal = "";
+  ctrl.healthVal = ""; 
 
-    ctrl.filters = [{
-      filterName: "DIET",
-      categories: [{
-          name: "Balanced",
-          value: "balanced"
-          },
-          {
-          name: "High-Protein",
-          value: "high-protein"
-          },
-          {
-          name: "High-Fiber",
-          value: "high-fiber"
-          },
-          {
-          name: "Low-Fat",
-          value: "low-fat"
-          },
-          {
-          name: "Low-Carb",
-          value: "low-carb"
-          },
-          {
-          name: "Low-Sodium",
-          value: "low-sodium"
-          }
-      ]
-  },
-  {
-      filterName: "HEALTH",
-      categories: [{
-          name: "Dairy-Free",
-          value: "dairy-free"
-          },
-          {
-          name: "Gluten-Free",
-          value: "gluten-free"
-          },
-          {
-          name: "Keto-Friendly",
-          value: "keto-friendly"
-          },
-          {
-          name: "Paleo",
-          value: "paleo"
-          },
-          {
-          name: "Peanut-Free",
-          value: "peanut-free"
-          },
-          {
-          name: "Vegetarian",
-          value: "vegetarian"
-          }
-      ]
-  }]
+  ctrl.dietFilter = ["Balanced", "High-Protein", "High-Fiber", "Low-Fat", "Low-Carb", "Low-Sodium"]
+  ctrl.healthFilter = ["Dairy-Free", "Gluten-Free", "Keto-Friendly", "Paleo", "Peanut-Free", "Vegetarian"]
 
-  ctrl.addValue = function(filterVal, filterName) {
-    console.log(filterVal);
-    console.log(filterName);
+  ctrl.getSearch = (search, diet, health) => {
+    ctrl.getList({
+      que: search,
+      diet: diet.toLowerCase(),
+      health: health.toLowerCase()
+    });
+  }
 
-    if (filterName === "HEALTH") {
-        let healthVal = filterVal;
-    }
-    if (filterName === "DIET") {
-        let dietVal = filterVal;
-    }
 }
 
-    ctrl.getSearch = (search) =>{
-        ctrl.getList({
-          que:search
-        });
-    }
-     
-  }
-  
-  angular
+angular
   .module('RecipeApp')
   .component('searchCriteria', {
     template: `
@@ -90,31 +28,41 @@ function SearchCriteriaController() {
       <div class="searchInput">
         <input class="searchBox" ng-model="$ctrl.searchVar" placeholder="what do you want to eat"/>
         <div class="searchBack"></div>
-        <button class="searchButton" ng-click="$ctrl.getSearch($ctrl.searchVar)"> Search Now </button>
+        <button class="searchButton" ng-click="$ctrl.getSearch($ctrl.searchVar, $ctrl.dietVal, $ctrl.healthVal)"> Search Now </button>
        </div>
     </div>
 
     <div class="filterContainer">
     <div class="filterMasterCard">
+    <select ng-model="$ctrl.dietVal">
+      <option value="" selected>-- DIET --</option>
+      <option ng-repeat="item in $ctrl.dietFilter" value="{{item}}">{{item}}</option>
+    </select>
+
+    <select ng-model="$ctrl.healthVal">
+      <option value="" selected>-- HEALTH --</option>
+      <option ng-repeat="item in $ctrl.healthFilter" value="{{item}}">{{item}}</option>
+    </select>
+
         <div class="filterCard" ng-repeat="filter in $ctrl.filters">
             <div class="filterButton">
-                <h4>{{filter.filterName}}</h4>
+                <h4 ng-model="$ctrl.diet">{{filter.filterName}}</h4>
                 <i class="material-icons redIcon">keyboard_arrow_down</i>
             </div>
             <div class="filterDropdown">
-                <div ng-repeat="category in filter.categories">
-                    <p ng-click="$ctrl.addValue(category.value, filter.filterName)">{{category.name}}</p>
-                </div>
+                <select ng-options="categorie.name for categorie in filter.categories">
+                    // <p ng-click="$ctrl.addValue(category.value, filter.filterName)">{{category.name}}</p>
+                </select>
             <div>
         </div>
     </div>
     </div>
-    `, 
+    `,
     controller: SearchCriteriaController,
     bindings: {
       getList: '&',
-    //   me: '<',
-    //   onDelete: '&',
-    //   onUpdate: '&'
+      //   me: '<',
+      //   onDelete: '&',
+      //   onUpdate: '&'
     }
-});
+  });
